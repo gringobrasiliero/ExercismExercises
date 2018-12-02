@@ -24,10 +24,10 @@ class WordProblem {
     let operWords = ["plus", "minus", "multiplied", "divided"]
     for (var i = 0; i < this.tokens.length; i++ ){
       var isnum = /^\d+$/.test(this.tokens[i]);
-      if (isnum){
-        numbers.push(this.tokens[i])
-      }else if(operWords.includes(this.tokens[i])){
+      if(operWords.includes(this.tokens[i])){
         operators.push(numberOperators[this.tokens[i]])
+      }else{
+        numbers.push(this.tokens[i])
       }
 
     }
