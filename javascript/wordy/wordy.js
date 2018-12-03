@@ -31,7 +31,9 @@ class WordProblem {
       }
 
     }
-
+    if (operators.length == 0){
+      throw new ArgumentError()
+    }
     var result = numbers.reduce(function(arr, v, i) {
         return arr.concat(v, operators[i]);
     }, []);
