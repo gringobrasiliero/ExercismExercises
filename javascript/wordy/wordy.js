@@ -21,13 +21,13 @@ class WordProblem {
   answer() {
     let numbers = []
     let operators = []
-    let operWords = ["plus", "minus", "multiplied", "divided"]
     for (var i = 0; i < this.tokens.length; i++ ){
-      var isnum = /^\d+$/.test(this.tokens[i]);
-      if(operWords.includes(this.tokens[i])){
-        operators.push(numberOperators[this.tokens[i]])
+      let word = this.tokens[i];
+      var isnum = /^\d+$/.test(word);
+      if(word in numberOperators){
+        operators.push(numberOperators[word])
       }else{
-        numbers.push(this.tokens[i])
+        numbers.push(word)
       }
 
     }
@@ -38,7 +38,7 @@ class WordProblem {
         return arr.concat(v, operators[i]);
     }, []);
 
-    result.pop()
+
     result = result.join(" ")
     return eval(result)
   }
