@@ -37,7 +37,7 @@ class WordProblem {
     }, []);
 
     result.pop()
-    result = result.join("")
+    result = result.join(" ")
     return eval(result)
   }
 }
